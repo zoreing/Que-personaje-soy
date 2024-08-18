@@ -9,9 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        
+        VStack {
+            NavigationView {
+                List{
+                Text("Hombre")
+                Text("Mujer")
+                Text("Ninguno de los anteriores")
+                    
+            }
+            .navigationTitle("Cual es tu sexo")
+            .navigationBarTitleDisplayMode(.inline)
+                }
+        //Text("Hello, world!")
             .padding()
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
