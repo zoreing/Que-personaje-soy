@@ -10,17 +10,20 @@ import SwiftUI
 struct PreguntaDosView: View {
     var body: some View {
         //Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
         VStack {
             NavigationView {
                 List{
-                Text("")
-                Text("Mujer")
-                Text("Ninguno de los anteriores")
-                    
+                Text("La eficiencia y la lógica para encontrar la mejor solución.")     //A
+                Text("El coraje y la acción inmediata para resolver el problema.")      //B
+                Text("La moralidad y el impacto positivo en los demás")                 //C
+                Text("La estrategia a largo plazo y el éxito del grupo.s")              //D
+                
             }
-            .navigationTitle("Cual es tu sexo")
+            .navigationTitle("¿Qué valoras más en una situación difícil?")
             .navigationBarTitleDisplayMode(.inline)
                 }
+            .padding()
         }
     }
     

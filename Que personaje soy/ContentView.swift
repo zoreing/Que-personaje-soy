@@ -97,5 +97,6 @@ struct ContentView_Previews: PreviewProvider {
             .navigationBarTitleDisplayMode(.inline)
                 }
             .padding()
+            }
 
 */
