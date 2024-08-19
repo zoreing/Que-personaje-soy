@@ -8,32 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
-        @State var contadorPreguntas = [Int](0,5)
+       @StateObject var contadorPreguntas = contadorViewModel()
     var body: some View {
         
         VStack {
             NavigationView {
                 List{
-                    
-                Text("Hombre")
-                Text("Mujer")
-                Text("Ninguno de los anteriores")
-                    
+                    NavigationLink(destination: PreguntaDosView()){
+                    Button("Hombre") {
+                        contadorPreguntas.setCounts(count: 0,num :1)
+                    }}
+                    Button("Mujer"){
+                        contadorPreguntas.setCounts(count: 0,num :2)
+                    }
+                    Button("Ninguno de los anteriores"){
+                        contadorPreguntas.setCounts(count: 0,num :3)
+                    }
+                    Text(String(contadorPreguntas.contadorPreguntas[0]))
+             
             }
             .navigationTitle("Cual es tu sexo")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
                 }
             .padding()
         }
     }
     
 }
-func llamarNuevaView() -> void{
-    preguntaDosView()
+final class contadorViewModel : ObservableObject{
+    @Published var contadorPreguntas = [Int](repeating: 0, count: 5)
+    func setCounts(count: Int, num : Int){
+        contadorPreguntas[count] = num
+    }
+    
 }
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
 
