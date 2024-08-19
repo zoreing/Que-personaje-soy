@@ -1,20 +1,19 @@
 //
-//  ContentView.swift
+//  PreguntaDosView.swift
 //  Que personaje soy
 //
-//  Created by Jesus Rafael Valdes on 17/08/24.
+//  Created by Jesus Rafael Valdes on 18/08/24.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-  //  @Binding var preguntaUno: Int
+struct PreguntaDosView: View {
     var body: some View {
-        
+        //Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         VStack {
             NavigationView {
                 List{
-                Text("Hombre")
+                Text("")
                 Text("Mujer")
                 Text("Ninguno de los anteriores")
                     
@@ -22,15 +21,13 @@ struct ContentView: View {
             .navigationTitle("Cual es tu sexo")
             .navigationBarTitleDisplayMode(.inline)
                 }
-        //Text("Hello, world!")
-            .padding()
         }
     }
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct PreguntaDosView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PreguntaDosView()
     }
 }
