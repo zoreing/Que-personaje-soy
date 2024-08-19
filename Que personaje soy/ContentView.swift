@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+  //  @Binding var preguntaUno: Int
     var body: some View {
         
         VStack {
