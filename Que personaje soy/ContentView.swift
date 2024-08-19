@@ -14,7 +14,7 @@ struct ContentView: View {
         VStack {
             NavigationView {
                 List{
-                    NavigationLink(destination: PreguntaDosDosView()){
+                    NavigationLink(destination: PreguntaDosDosView(contadorPreguntas: contadorPreguntas)){
                     Button("Hombre") {
                         contadorPreguntas.setCounts(count: 0,num :1)
                     }}
