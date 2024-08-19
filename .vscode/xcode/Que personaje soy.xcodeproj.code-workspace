@@ -1,0 +1,20 @@
+{
+    "folders": [
+        {
+            "name": "Que-personaje-soy/Que personaje soy.xcodeproj",
+            "path": "../.."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "Que personaje soyUITests": true,
+            "Que personaje soyTests": true,
+            "Que personaje soy": true
+        },
+        "search.exclude": {
+            "Que personaje soyUITests": true,
+            "Que personaje soyTests": true,
+            "Que personaje soy": true
+        }
+    }
+}

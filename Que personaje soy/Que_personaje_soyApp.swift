@@ -15,6 +15,10 @@ struct Que_personaje_soyApp: App {
     var preguntaTresCount = 0
     var preguntaCuatroCount = 0
     var preguntaCincoCount = 0
+
+    func name() -> void {
+        
+    }
     var body: some Scene {
 
         
