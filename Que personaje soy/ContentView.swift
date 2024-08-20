@@ -146,6 +146,7 @@ struct PreguntaTresTresView: View {
                         }
                     }
             }
+            .navigationBarHidden(true)
                // Text("Reflexionando y meditando antes de actuar.")          //\\a
                //Text("Enfrentándolo de manera directa y sin rodeos.")       //\\b
                //Text("Buscando una solución pacífica y diplomática.")       //\\c
@@ -178,6 +179,8 @@ struct PreguntaCuatroCuatroView: View {
             .navigationTitle("¿Qué rol prefieres asumir en un equipo?")
             .navigationBarTitleDisplayMode(.inline)
                 }
+            
+            .navigationBarHidden(true)
             .padding()
         }
     }
