@@ -269,7 +269,7 @@ struct PreguntaCincoCincoView: View {
 }
 
 
-struct PreguntaCincoCincoView: View {
+struct ResultadoView: View {
        @StateObject var contadorPreguntas = contadorViewModel()
     
     var body: some View {
@@ -278,23 +278,64 @@ struct PreguntaCincoCincoView: View {
     
       VStack{
         Text("Tu eres")
+        Text(quePersonajeEresTu(contadorPreguntas))
       } 
     }
 }
 
 func quePersonajeEresTu(resultados : [Int])-> String{
-        var preguntaUno = resultados[0]
-        var preguntaDos = resultados[1]
-        var preguntaTres = resultados[2]
-        var preguntaCuatro = resultados[3]
-        var preguntaCinco = resultados[4]
+        let genero = resultados[0]
+        let respuestasFinales = Array(respuestas[1...])
+        let personajesMasculinos = [
+            1 : "Yoda",
+            2 : "Han Solo",
+            3 : "Darth Vader",
+            4 : "Luke Skywalker"
+        ]
+
+        let personajesFemeninos = [
+            1 : "Mon Mothma",
+            2 : "Ahsoka Tano",
+            3 : "Padme Amidala",
+            4 : "Leia Organa"
+        ]
+
+        var cont_respuestas : [Int : Int] = [1 : 0, 2 : 0, 3 : 0, 4: 0 ]
+
+  for respuesta in respuestas {
+        if let _ = contadorRespuestas[respuesta] {
+            contadorRespuestas[respuesta]! += 1
+        }
+    }
+    let numeroGanador = contadorRespuestas.max { a, b in a.value < b.value }?.key
+
+     var personaje: String?
+
+        resultados[0] = 0
+        var resultadoA = 0
+        var resultadoB = 0
+        var resultadoC = 0
+        var resultadoD = 0
+        var maxResultado
 
         if preguntaUno == 3  {
             preguntaUno = Int.random(in: 1...2)
         }        
 
-    return ""
+        maxResultado = max(resultadoA, resultadoB, resultadoC, resultadoD)
+
+
+
+ if genero == 1 {  // 1 es Masculino
+        personaje = personajesMasculinos[numeroGanador ?? 0]
+    } else if genero == 2 {  // 2 es Femenino
+        personaje = personajesFemeninos[numeroGanador ?? 0]
+    }
+    
+    return personaje
 }
+
+
 
 
 final class contadorViewModel : ObservableObject{
