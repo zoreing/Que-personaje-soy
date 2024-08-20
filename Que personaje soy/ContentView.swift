@@ -98,16 +98,8 @@ struct PreguntaDosDosView: View {
                     }
                     NavigationLink(destination: PreguntaTresTresView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
                        EmptyView()
-                }
-                }
-
-                //Text("La eficiencia y la lógica para encontrar la mejor solución.")     //A
-                //ext("El coraje y la acción inmediata para resolver el problema.")      //B
-                //ext("La moralidad y el impacto positivo en los demás")                 //C
-                //Text("La estrategia a largo plazo y el éxito del grupo.s")              //D
-                    //Text(String(contadorPreguntas.contadorPreguntas[1]))
-
-    
+                        }
+                    }
                 }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
@@ -121,25 +113,75 @@ struct PreguntaTresTresView: View {
     @StateObject var contadorPreguntas = contadorViewModel()
       @State private var navegateToPregunta=false
 
+    func nvtrue(){
+        navegateToPregunta=true
+    }
+
     var body: some View {
-
-
-
-
-
-     
-                Text("Reflexionando y meditando antes de actuar.")          //\\a
-                Text("Enfrentándolo de manera directa y sin rodeos.")       //\\b
-                Text("Buscando una solución pacífica y diplomática.")       //\\c
-                Text("Liderando y guiando a los demás hacia la solución.")  //\\d
-
-        
+            NavigationView {
+                VStack{
+                    Text("¿Qué es lo que más importa en una situación difícil?")
+                    VStack{
+                        Button("Reflexionando y meditando antes de actuar."){
+                        contadorPreguntas.setCounts(count: 2,num :1)
+                        nvtrue()
+                        }
+                        Button("Enfrentándolo de manera directa y sin rodeos."){
+                            contadorPreguntas.setCounts(count: 2,num :2)
+                        nvtrue()
+                        }
+                        Button("Buscando una solución pacífica y diplomática."){
+                            contadorPreguntas.setCounts(count: 2,num :3)
+                            nvtrue()
+                        }
+                        Button("Liderando y guiando a los demás hacia la solución."){
+                            contadorPreguntas.setCounts(count: 2,num :4)
+                            nvtrue()
+                        }
+                    Text(String(contadorPreguntas.contadorPreguntas[1]))
+                  //  Text("localetior")
+                    }
+                    NavigationLink(destination: PreguntaCuatroCuatroView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
+                       EmptyView()
+                        }
+                    }
+            }
+               // Text("Reflexionando y meditando antes de actuar.")          //\\a
+               //Text("Enfrentándolo de manera directa y sin rodeos.")       //\\b
+               //Text("Buscando una solución pacífica y diplomática.")       //\\c
+               // Text("Liderando y guiando a los demás hacia la solución.")  //\\d
                     Text(String(contadorPreguntas.contadorPreguntas[0]))
                     Text(String(contadorPreguntas.contadorPreguntas[1]))
+                    Text(String(contadorPreguntas.contadorPreguntas[2]))
     }
 }
 
+struct PreguntaCuatroView: View {
 
+    @StateObject var contadorPreguntas = contadorViewModel()
+      @State private var navegateToPregunta=false
+    var body: some View {
+
+        VStack {
+            NavigationView {
+                List{
+                Text("El de sabio consejero, ofreciendo guía desde la experiencia.")        //A
+                Text("El de héroe valiente, tomando riesgos para el éxito del equipo.")     //B
+                Text("El de protector, asegurándote de que todos estén bien y seguros.")    //C
+                Text("El de líder, tomando decisiones estratégicas para el bien común.")    //D
+
+                    Text(String(contadorPreguntas.contadorPreguntas[0]))
+                    Text(String(contadorPreguntas.contadorPreguntas[1]))
+                    Text(String(contadorPreguntas.contadorPreguntas[2]))
+                
+            }
+            .navigationTitle("¿Qué rol prefieres asumir en un equipo?")
+            .navigationBarTitleDisplayMode(.inline)
+                }
+            .padding()
+        }
+    }
+}
 
 final class contadorViewModel : ObservableObject{
     @Published var contadorPreguntas = [Int](repeating: 0, count: 5)
