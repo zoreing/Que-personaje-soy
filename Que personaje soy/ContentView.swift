@@ -69,7 +69,7 @@ struct PreguntaDosDosView: View {
                 VStack{
                     Text("¿Qué es lo que más importa en una situación difícil?")
                     VStack{
-                        Buttom("La eficiencia y la lógica para encontrar la mejor solución"){
+                        Button("La eficiencia y la lógica para encontrar la mejor solución"){
                         contadorPreguntas.setCounts(count: 1,num :1)
                         }
                         Button("El coraje y la acción inmediata para resolver el problema."){
