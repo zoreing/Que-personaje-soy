@@ -166,25 +166,48 @@ struct PreguntaCuatroCuatroView: View {
       @State private var navegateToPregunta=false
     var body: some View {
 
-        VStack {
-            NavigationView {
-                List{
-                Text("El de sabio consejero, ofreciendo guía desde la experiencia.")        //A
-                Text("El de héroe valiente, tomando riesgos para el éxito del equipo.")     //B
-                Text("El de protector, asegurándote de que todos estén bien y seguros.")    //C
-                Text("El de líder, tomando decisiones estratégicas para el bien común.")    //D
-
-                    Text(String(contadorPreguntas.contadorPreguntas[0]))
-                    Text(String(contadorPreguntas.contadorPreguntas[1]))
-                    Text(String(contadorPreguntas.contadorPreguntas[2]))
+        
+            
                 
+                //Text("El de sabio consejero, ofreciendo guía desde la experiencia.")        //A
+              //  Text("El de héroe valiente, tomando riesgos para el éxito del equipo.")     //B
+              //  Text("El de protector, asegurándote de que todos estén bien y seguros.")    //C
+              //  Text("El de líder, tomando decisiones estratégicas para el bien común.")    //D
+
+
+          NavigationView {
+                VStack{
+                    Text("¿Qué rol prefieres asumir en un equipo?")
+                    VStack{
+                        Button("El de sabio consejero, ofreciendo guía desde la experiencia."){
+                        contadorPreguntas.setCounts(count: 3,num :1)
+                        nvtrue()
+                        }
+                        Button("El de héroe valiente, tomando riesgos para el éxito del equipo."){
+                            contadorPreguntas.setCounts(count: 3,num :2)
+                        nvtrue()
+                        }
+                        Button("El de protector, asegurándote de que todos estén bien y seguros."){
+                            contadorPreguntas.setCounts(count: 3,num :3)
+                            nvtrue()
+                        }
+                        Button("El de líder, tomando decisiones estratégicas para el bien común."){
+                            contadorPreguntas.setCounts(count: 3,num :4)
+                            nvtrue()
+                        }
+                  //  Text("localetior")
+                    }
+                  //  NavigationLink(destination: PreguntaCuatroCuatroView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
+                     //  EmptyView()
+                     //   }
+                    }
             }
-                }
-            .navigationTitle("¿Qué rol prefieres asumir en un equipo?")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .padding()
-        }
+                    Text(String(contadorPreguntas.contadorPreguntas[0]))
+                    Text(String(contadorPreguntas.contadorPreguntas[1]))
+                    Text(String(contadorPreguntas.contadorPreguntas[2]))
     }
 }
 
