@@ -268,6 +268,35 @@ struct PreguntaCincoCincoView: View {
     }
 }
 
+
+struct PreguntaCincoCincoView: View {
+       @StateObject var contadorPreguntas = contadorViewModel()
+    
+    var body: some View {
+       
+                
+    
+      VStack{
+        Text("Tu eres")
+      } 
+    }
+}
+
+func quePersonajeEresTu(resultados : [Int])-> String{
+        var preguntaUno = resultados[0]
+        var preguntaDos = resultados[1]
+        var preguntaTres = resultados[2]
+        var preguntaCuatro = resultados[3]
+        var preguntaCinco = resultados[4]
+
+        if preguntaUno == 3  {
+            preguntaUno = Int.random(in: 1...2)
+        }        
+
+    return ""
+}
+
+
 final class contadorViewModel : ObservableObject{
     @Published var contadorPreguntas = [Int](repeating: 0, count: 5)
     func setCounts(count: Int, num : Int){
