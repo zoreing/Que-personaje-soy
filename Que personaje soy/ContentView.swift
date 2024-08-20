@@ -285,7 +285,7 @@ struct ResultadoView: View {
 
 func quePersonajeEresTu(datos : [Int])-> String{
         let genero = datos[0]
-        let respuestas = Array(respuestas[1...])
+        let respuestas = Array(datos[1...])
         
         let personajesMasculinos = [
             1 : "Yoda",
@@ -312,18 +312,7 @@ func quePersonajeEresTu(datos : [Int])-> String{
 
      var personaje: String?
 
-        resultados[0] = 0
-        var resultadoA = 0
-        var resultadoB = 0
-        var resultadoC = 0
-        var resultadoD = 0
-        var maxResultado
 
-        if preguntaUno == 3  {
-            preguntaUno = Int.random(in: 1...2)
-        }        
-
-        maxResultado = max(resultadoA, resultadoB, resultadoC, resultadoD)
 
 
 
