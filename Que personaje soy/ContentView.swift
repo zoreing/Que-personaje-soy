@@ -164,6 +164,10 @@ struct PreguntaCuatroCuatroView: View {
 
     @StateObject var contadorPreguntas = contadorViewModel()
       @State private var navegateToPregunta=false
+      
+    func nvtrue(){
+        navegateToPregunta=true
+    }
     var body: some View {
 
         
