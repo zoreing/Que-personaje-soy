@@ -254,9 +254,9 @@ struct PreguntaCincoCincoView: View {
                         }
                   //  Text("localetior")
                     }
-                  //  NavigationLink(destination: PreguntaCuatroCuatroView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
-                     //  EmptyView()
-                     //   }
+                   NavigationLink(destination: ResultadoView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
+                       EmptyView()
+                        }
                     }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -272,20 +272,26 @@ struct PreguntaCincoCincoView: View {
 struct ResultadoView: View {
        @StateObject var contadorPreguntas = contadorViewModel()
     //var dataUno : Int = contadorPreguntas.$contadorPreguntas[0]
-
-    var body: some View {
-       
-                
+    //var data : [Int] = contadorViewModel().getCounts()
     
+
+    
+    
+    var body: some View {
+        let copiaArray = contadorPreguntas.getCounts()
+        let defaultString = quePersonajeEresTu(datos: copiaArray) ?? "na"
+        
       VStack{
         Text("Tu eres")
-        Text(quePersonajeEresTu(data))
-      } 
+          
+         Text(defaultString)
+      }
+      .navigationBarHidden(true)
     }
 }
 
 func quePersonajeEresTu(datos : [Int])-> String?{
-        let genero = datos[0]
+        var genero = datos[0]
         let respuestas = Array(datos[1...])
         
         let personajesMasculinos = [
@@ -301,6 +307,9 @@ func quePersonajeEresTu(datos : [Int])-> String?{
             3 : "Padme Amidala",
             4 : "Leia Organa"
         ]
+    if genero == 3 {
+        genero = Int.random(in: 1...2)
+    }
 
         var contRespuestas : [Int : Int] = [1 : 0, 2 : 0, 3 : 0, 4: 0 ]
 
@@ -323,6 +332,8 @@ func quePersonajeEresTu(datos : [Int])-> String?{
         personaje = personajesFemeninos[numeroGanador ?? 0]
     }
     
+    
+    
     return personaje
 }
 
@@ -331,8 +342,15 @@ func quePersonajeEresTu(datos : [Int])-> String?{
 
 final class contadorViewModel : ObservableObject{
     @Published var contadorPreguntas = [Int](repeating: 0, count: 5)
+    
+    init(){
+        contadorPreguntas = [0,0,0,0,0]
+    }
     func setCounts(count: Int, num : Int){
         contadorPreguntas[count] = num
+    }
+    func getCounts() -> [Int]{
+        return contadorPreguntas
     }
     
 }
