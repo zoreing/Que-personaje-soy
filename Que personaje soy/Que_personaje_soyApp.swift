@@ -11,10 +11,16 @@ import SwiftUI
 struct Que_personaje_soyApp: App {
     // var PreguntaUno:[Int:String](); let PreguntaUno[1] = "Hombre"); let PreguntaUno[2] = "Mujer; let PreguntaUno[3] = ninguno;
     var preguntaUnoCount = 0
-    var preguntaDosCount = 0
-    var preguntaTresCount = 0
-    var preguntaCuatroCount = 0
-    var preguntaCincoCount = 0
+    var respuestaACount = 0
+    var respuestaBCount = 0
+    var respuestaCCount = 0
+    var respuestaDCount = 0
+
+    func counts(contador :[Int]){
+        preguntaUnoCount = contador[0];
+
+
+    }
 
     func name() {
         
@@ -24,6 +30,7 @@ struct Que_personaje_soyApp: App {
         
         WindowGroup {
             ContentView()
+            
         }
     }
 }

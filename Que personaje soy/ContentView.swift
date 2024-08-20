@@ -20,6 +20,7 @@ struct ContentView: View {
                 VStack{
                     
                     VStack{
+                    Text("Cual es tu sexo")
                     Button("Hombre") {
                         print("Esta mierda entra ")
                         contadorPreguntas.setCounts(count: 0,num :1)
@@ -60,25 +61,43 @@ struct ContentView: View {
 
 struct PreguntaDosDosView: View {
     @StateObject var contadorPreguntas = contadorViewModel()
+      @State private var navegateToPregunta=false
     var body: some View {
         
         
-        VStack {
             NavigationView {
-                List{
-                Text("La eficiencia y la lógica para encontrar la mejor solución.")     //A
-                Text("El coraje y la acción inmediata para resolver el problema.")      //B
-                Text("La moralidad y el impacto positivo en los demás")                 //C
-                Text("La estrategia a largo plazo y el éxito del grupo.s")              //D
-                    Text(String(contadorPreguntas.contadorPreguntas[0]))
-            }
-    
+                VStack{
+                    Text("¿Qué es lo que más importa en una situación difícil?")
+                    VStack{
+                        Buttom("La eficiencia y la lógica para encontrar la mejor solución"){
+                        contadorPreguntas.setCounts(count: 1,num :1)
+                        }
+                        Button("El coraje y la acción inmediata para resolver el problema."){
+                            contadorPreguntas.setCounts(count: 1,num :2)
+                        }
+
+                        Button("La moralidad y el impacto positivo en los demás."){
+                            contadorPreguntas.setCounts(count: 1,num :3)
+                        }
+
+                        Button("La estrategia a largo plazo y el éxito del grupo."){
+                            contadorPreguntas.setCounts(count: 1,num :4)
+                        }
+                        
+
+                    }
+                }
+                //Text("La eficiencia y la lógica para encontrar la mejor solución.")     //A
+                //ext("El coraje y la acción inmediata para resolver el problema.")      //B
+                //ext("La moralidad y el impacto positivo en los demás")                 //C
+                //Text("La estrategia a largo plazo y el éxito del grupo.s")              //D
+                    Text(String(contadorPreguntas.contadorPreguntas[1]))
+
     
                 }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .padding()
-        }
     }
     
 }
