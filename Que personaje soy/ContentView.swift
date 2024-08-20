@@ -85,13 +85,14 @@ struct PreguntaDosDosView: View {
                         }
                         
 
+                    Text(String(contadorPreguntas.contadorPreguntas[1]))
                     }
                 }
                 //Text("La eficiencia y la lógica para encontrar la mejor solución.")     //A
                 //ext("El coraje y la acción inmediata para resolver el problema.")      //B
                 //ext("La moralidad y el impacto positivo en los demás")                 //C
                 //Text("La estrategia a largo plazo y el éxito del grupo.s")              //D
-                    Text(String(contadorPreguntas.contadorPreguntas[1]))
+                    //Text(String(contadorPreguntas.contadorPreguntas[1]))
 
     
                 }
