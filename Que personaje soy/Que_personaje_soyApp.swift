@@ -17,7 +17,7 @@ struct Que_personaje_soyApp: App {
     var respuestaDCount = 0
 
     func counts(contador :[Int]){
-        preguntaUnoCount = contador[0];
+       // preguntaUnoCount = contador[0];
 
 
     }
