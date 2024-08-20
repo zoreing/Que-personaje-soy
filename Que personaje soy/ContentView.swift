@@ -86,6 +86,7 @@ struct PreguntaDosDosView: View {
                         
 
                     Text(String(contadorPreguntas.contadorPreguntas[1]))
+                    Text("localetior")
                     }
                 }
                 //Text("La eficiencia y la lógica para encontrar la mejor solución.")     //A
