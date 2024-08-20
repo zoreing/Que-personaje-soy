@@ -283,9 +283,10 @@ struct ResultadoView: View {
     }
 }
 
-func quePersonajeEresTu(resultados : [Int])-> String{
-        let genero = resultados[0]
-        let respuestasFinales = Array(respuestas[1...])
+func quePersonajeEresTu(datos : [Int])-> String{
+        let genero = datos[0]
+        let respuestas = Array(respuestas[1...])
+        
         let personajesMasculinos = [
             1 : "Yoda",
             2 : "Han Solo",
@@ -300,14 +301,14 @@ func quePersonajeEresTu(resultados : [Int])-> String{
             4 : "Leia Organa"
         ]
 
-        var cont_respuestas : [Int : Int] = [1 : 0, 2 : 0, 3 : 0, 4: 0 ]
+        var contRespuestas : [Int : Int] = [1 : 0, 2 : 0, 3 : 0, 4: 0 ]
 
   for respuesta in respuestas {
-        if let _ = contadorRespuestas[respuesta] {
-            contadorRespuestas[respuesta]! += 1
+        if let _ = contRespuestas[respuesta] {
+            contRespuestas[respuesta]! += 1
         }
     }
-    let numeroGanador = contadorRespuestas.max { a, b in a.value < b.value }?.key
+    let numeroGanador = contRespuestas.max { a, b in a.value < b.value }?.key
 
      var personaje: String?
 
