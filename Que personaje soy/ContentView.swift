@@ -96,11 +96,11 @@ struct PreguntaDosDosView: View {
                     Text(String(contadorPreguntas.contadorPreguntas[1]))
                   //  Text("localetior")
                     }
+                    NavigationLink(destination: PreguntaTresTresView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
+                       EmptyView()
+                }
                 }
 
-                NavigationLink(destination: PreguntaTresTresView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
-                    EmptyView()
-                }
                 //Text("La eficiencia y la lógica para encontrar la mejor solución.")     //A
                 //ext("El coraje y la acción inmediata para resolver el problema.")      //B
                 //ext("La moralidad y el impacto positivo en los demás")                 //C
