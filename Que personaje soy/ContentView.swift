@@ -9,24 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
        @StateObject var contadorPreguntas = contadorViewModel()
+        @State private var navegateToPreguntaDos=false
+    func nvtrue(){
+        navegateToPreguntaDos=true
+    }
     var body: some View {
         
-        VStack {
+        
             NavigationView {
-                List{
-                    NavigationLink(destination: PreguntaDosDosView(contadorPreguntas: contadorPreguntas)){
+                VStack{
+                    
+                    VStack{
                     Button("Hombre") {
+                        print("Esta mierda entra ")
                         contadorPreguntas.setCounts(count: 0,num :1)
-                    }}
+                        nvtrue()
+                    }
                     Button("Mujer"){
                         contadorPreguntas.setCounts(count: 0,num :2)
+                        nvtrue()
+                        
                     }
                     Button("Ninguno de los anteriores"){
                         contadorPreguntas.setCounts(count: 0,num :3)
+                        nvtrue()
                     }
-                    Text(String(contadorPreguntas.contadorPreguntas[0]))
+                    
+                    }
+                    
+                
+                NavigationLink(destination: PreguntaDosDosView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPreguntaDos){
+                    EmptyView()
+                }
+
+                   // Text(String(contadorPreguntas.contadorPreguntas[0]))
              
-            }
+            
             .navigationTitle("Cual es tu sexo")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
@@ -34,8 +52,8 @@ struct ContentView: View {
             .padding()
         }
     }
-    
 }
+
 
 
 
