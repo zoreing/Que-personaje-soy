@@ -156,7 +156,7 @@ struct PreguntaTresTresView: View {
     }
 }
 
-struct PreguntaCuatroView: View {
+struct PreguntaCuatroCuatroView: View {
 
     @StateObject var contadorPreguntas = contadorViewModel()
       @State private var navegateToPregunta=false
