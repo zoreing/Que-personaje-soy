@@ -179,11 +179,10 @@ struct PreguntaCuatroCuatroView: View {
                     Text(String(contadorPreguntas.contadorPreguntas[2]))
                 
             }
+                }
             .navigationTitle("¿Qué rol prefieres asumir en un equipo?")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
-                }
-            
             .padding()
         }
     }
