@@ -93,7 +93,7 @@ struct PreguntaDosDosView: View {
                         }
                         
 
-                    Text(String(contadorPreguntas.contadorPreguntas[1]))
+                  //  Text(String(contadorPreguntas.contadorPreguntas[1]))
                   //  Text("localetior")
                     }
                     NavigationLink(destination: PreguntaTresTresView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
@@ -138,7 +138,7 @@ struct PreguntaTresTresView: View {
                             contadorPreguntas.setCounts(count: 2,num :4)
                             nvtrue()
                         }
-                    Text(String(contadorPreguntas.contadorPreguntas[1]))
+                //    Text(String(contadorPreguntas.contadorPreguntas[1]))
                   //  Text("localetior")
                     }
                     NavigationLink(destination: PreguntaCuatroCuatroView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
@@ -154,9 +154,9 @@ struct PreguntaTresTresView: View {
                //Text("Enfrentándolo de manera directa y sin rodeos.")       //\\b
                //Text("Buscando una solución pacífica y diplomática.")       //\\c
                // Text("Liderando y guiando a los demás hacia la solución.")  //\\d
-                    Text(String(contadorPreguntas.contadorPreguntas[0]))
-                    Text(String(contadorPreguntas.contadorPreguntas[1]))
-                    Text(String(contadorPreguntas.contadorPreguntas[2]))
+                 //   Text(String(contadorPreguntas.contadorPreguntas[0]))
+                 //   Text(String(contadorPreguntas.contadorPreguntas[1]))
+                //Text(String(contadorPreguntas.contadorPreguntas[2]))
     }
 }
 
@@ -201,6 +201,59 @@ struct PreguntaCuatroCuatroView: View {
                         }
                   //  Text("localetior")
                     }
+                    NavigationLink(destination: PreguntaCincoCincoView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
+                       EmptyView()
+                        }
+                    }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
+            .padding()
+               //     Text(String(contadorPreguntas.contadorPreguntas[0]))
+               //     Text(String(contadorPreguntas.contadorPreguntas[1]))
+               //     Text(String(contadorPreguntas.contadorPreguntas[2]))
+    }
+}
+
+
+struct PreguntaCincoCincoView: View {
+       @StateObject var contadorPreguntas = contadorViewModel()
+      @State private var navegateToPregunta=false
+      
+    func nvtrue(){
+        navegateToPregunta=true
+    }
+
+    var body: some View {
+       
+                
+            //    Text("Sabio y espiritual, con una profunda conexión con el universo.")          //A
+            //    Text("Aventurero y audaz, con un enfoque pragmático en la vida.")               //\\B
+            //    Text("Compasivo y justo, siempre buscando lo mejor para los demás.")            //\\C
+           //     Text("Fuerte y decidido, con un enfoque en el liderazgo y la justicia.")        //\\D
+                
+         NavigationView {
+                VStack{
+                    Text("¿Cómo te describirían mejor?")
+                    VStack{
+                        Button("espiritual, con una profunda conexión con el universo.."){
+                        contadorPreguntas.setCounts(count: 4,num :1)
+                        nvtrue()
+                        }
+                        Button("Aventurero y audaz, con un enfoque pragmático en la vida."){
+                            contadorPreguntas.setCounts(count: 4,num :2)
+                        nvtrue()
+                        }
+                        Button("Compasivo y justo, siempre buscando lo mejor para los demás."){
+                            contadorPreguntas.setCounts(count: 4,num :3)
+                            nvtrue()
+                        }
+                        Button("Fuerte y decidido, con un enfoque en el liderazgo y la justicia."){
+                            contadorPreguntas.setCounts(count: 4,num :4)
+                            nvtrue()
+                        }
+                  //  Text("localetior")
+                    }
                   //  NavigationLink(destination: PreguntaCuatroCuatroView(contadorPreguntas: contadorPreguntas), isActive: $navegateToPregunta){
                      //  EmptyView()
                      //   }
@@ -209,9 +262,9 @@ struct PreguntaCuatroCuatroView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
             .padding()
-                    Text(String(contadorPreguntas.contadorPreguntas[0]))
-                    Text(String(contadorPreguntas.contadorPreguntas[1]))
-                    Text(String(contadorPreguntas.contadorPreguntas[2]))
+
+
+        
     }
 }
 
