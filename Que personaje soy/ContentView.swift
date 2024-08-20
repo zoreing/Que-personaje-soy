@@ -271,19 +271,20 @@ struct PreguntaCincoCincoView: View {
 
 struct ResultadoView: View {
        @StateObject var contadorPreguntas = contadorViewModel()
-    
+    //var dataUno : Int = contadorPreguntas.$contadorPreguntas[0]
+
     var body: some View {
        
                 
     
       VStack{
         Text("Tu eres")
-        Text(quePersonajeEresTu(contadorPreguntas))
+        Text(quePersonajeEresTu(data))
       } 
     }
 }
 
-func quePersonajeEresTu(datos : [Int])-> String{
+func quePersonajeEresTu(datos : [Int])-> String?{
         let genero = datos[0]
         let respuestas = Array(datos[1...])
         
