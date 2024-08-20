@@ -64,7 +64,7 @@ struct PreguntaDosDosView: View {
       @State private var navegateToPregunta=false
 
     func nvtrue(){
-        navegateToPreguntaDos=true
+        navegateToPregunta=true
     }
     var body: some View {
         
@@ -134,6 +134,8 @@ struct PreguntaTresTresView: View {
                 Text("Liderando y guiando a los demás hacia la solución.")  //\\d
 
         
+                    Text(String(contadorPreguntas.contadorPreguntas[0]))
+                    Text(String(contadorPreguntas.contadorPreguntas[1]))
     }
 }
 
