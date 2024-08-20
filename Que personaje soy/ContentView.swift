@@ -181,11 +181,11 @@ struct PreguntaCuatroCuatroView: View {
             }
             .navigationTitle("¿Qué rol prefieres asumir en un equipo?")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
                 }
             
             .padding()
         }
-            .navigationBarHidden(true)
     }
 }
 
